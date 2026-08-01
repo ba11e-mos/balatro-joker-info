@@ -1,5 +1,7 @@
 # Joker Run Info
 
+[Download on Nexus Mods](https://www.nexusmods.com/balatro/mods/901)
+
 A Balatro mod that adds a **Jokers** page to the Run Info screen: every Joker you
 have, what it currently gives, and drag-and-drop reordering.
 
