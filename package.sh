@@ -13,7 +13,7 @@ STAGE="$(mktemp -d)"
 trap 'rm -rf "$STAGE"' EXIT
 
 mkdir -p "$OUT"
-rm -f "$OUT/$MOD-$VERSION.zip" "$OUT/$MOD.zip"
+rm -f "$OUT/$MOD.zip"
 
 # copy the mod, dropping development-only files
 rsync -a --exclude-from=- ./ "$STAGE/$MOD/" <<'EXCLUDES'
@@ -31,8 +31,9 @@ config/
 .DS_Store
 EXCLUDES
 
-( cd "$STAGE" && zip -qr "$OUT/$MOD-$VERSION.zip" "$MOD" )
-cp "$OUT/$MOD-$VERSION.zip" "$OUT/$MOD.zip"   # stable name for downloadURL
+# one zip, always the same name: the release tag carries the version, and
+# index.meta.json points at releases/latest/download/$MOD.zip
+( cd "$STAGE" && zip -qr "$OUT/$MOD.zip" "$MOD" )
 
-echo "built $OUT/$MOD-$VERSION.zip"
-unzip -l "$OUT/$MOD-$VERSION.zip"
+echo "built $OUT/$MOD.zip ($MOD $VERSION)"
+unzip -l "$OUT/$MOD.zip"
