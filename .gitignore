@@ -1,0 +1,13 @@
+# build output
+dist/
+*.zip
+
+# local state, never ship these
+.lovelyignore
+config/
+*.jkr
+
+# editor / OS junk
+.DS_Store
+Thumbs.db
+*.swp

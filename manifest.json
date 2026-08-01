@@ -1,0 +1,19 @@
+{
+  "id": "JokerRunInfo",
+  "name": "Joker Run Info",
+  "display_name": "Joker Run Info",
+  "author": [
+    "ba11e"
+  ],
+  "description": "Adds a Jokers page to Run Info: every active Joker, its modifiers, and reordering.",
+  "prefix": "jrinfo",
+  "main_file": "init.lua",
+  "version": "1.0.0",
+  "badge_colour": "D07C3A",
+  "badge_text_colour": "FFFFFF",
+  "icon_path": "modicon.png",
+  "website": "https://github.com/ba11e-mos/balatro-joker-info",
+  "dependencies": [
+    "Steamodded (>=1.0.0~BETA)"
+  ]
+}
