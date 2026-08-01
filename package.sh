@@ -4,7 +4,9 @@
 set -euo pipefail
 
 cd "$(dirname "$0")"
-MOD="$(basename "$PWD")"
+# the mod id, not the directory: on a CI runner the checkout is named after the
+# repo, which would put the wrong folder name inside the zip
+MOD="$(python3 -c 'import json;print(json.load(open("manifest.json"))["id"])')"
 VERSION="$(python3 -c 'import json;print(json.load(open("manifest.json"))["version"])')"
 OUT="$PWD/dist"
 STAGE="$(mktemp -d)"
