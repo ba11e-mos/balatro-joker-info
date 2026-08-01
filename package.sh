@@ -22,7 +22,7 @@ rsync -a --exclude-from=- ./ "$STAGE/$MOD/" <<'EXCLUDES'
 dist/
 *.zip
 package.sh
-index.meta.json
+bmi/
 screenshots/
 .gitignore
 .lovelyignore
